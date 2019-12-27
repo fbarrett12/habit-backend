@@ -39,3 +39,12 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Adds serializers
+gem 'fast_jsonapi'
+
+# Resets primary key sequence
+gem 'activerecord-reset-pk-sequence', '~> 0.2.0'
+
+# Add JWT for auth 
+gem 'jwt'
