@@ -3,5 +3,5 @@ class User < ApplicationRecord
   validates :username, uniqueness: true
 
   has_many :tasks
-  has_many :routine, through: :tasks
+  has_many :routines, through: :tasks
 end

@@ -2,7 +2,7 @@ class AuthController < ApplicationController
     def login
         @user = User.find_by(username: login_params[:username])
                 if @user && @user.authenticate(login_params[:password])
-                    render json: tokenForAccount(@user) #{user: @user, token: token}
+                    render json: tokenForAccount(UserSerializer.new(@user).serializable_hash) #{user: @user, token: token}
                 else
                     render json: {errors: @user.errors.full_messages}
                 end
