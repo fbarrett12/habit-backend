@@ -30,7 +30,6 @@ class ApplicationController < ActionController::API
 
     def getIdFromToken
         decoded = decodeToken
-
         unless decoded && decoded[0] && decoded[0]['id']
           return nil
         end

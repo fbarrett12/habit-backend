@@ -14,7 +14,7 @@ class AuthController < ApplicationController
             # token = JWT.decode(encoded_token, secret)
             user_id = getIdFromToken
             @user = User.find(user_id)
-            render json: tokenForAccount(@user)
+            render json: tokenForAccount(UserSerializer.new(@user).serializable_hash)
         end
     end
 
