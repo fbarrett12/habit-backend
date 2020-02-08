@@ -1,8 +1,14 @@
 class RoutinesController < ApplicationController
+    def index
+        @routines = Routine.all
+        render json: RoutineSerializer.new(@routines).serialized_json
+    end
+
     def create
         @routine = Routine.create(routine_params)  
         render json: RoutineSerializer.new(@routine).serialized_json
     end
+
 
     private
 
